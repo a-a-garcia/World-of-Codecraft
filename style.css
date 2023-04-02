@@ -36,3 +36,12 @@ ul {
     width: 90%;
     display: none;
 }
+
+#player1_name{
+    background-color: darkblue;
+    color: red ;
+}
+#player2_name{
+    background-color: darkblue;
+    color: yellow;
+}

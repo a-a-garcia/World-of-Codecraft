@@ -14,7 +14,7 @@ weapon_3 = {
     damage: 50,
 }
 
-weapon_4 = { 
+weapon_4 = {
     name: 'Mace of Math.Random',
     damage: '30'
 }
@@ -32,7 +32,9 @@ let player_turn = 1
 //PLAYERS
 //this.weapons[this.equipped_weapon].damage refers to the equipped weapon's damage.
 let player_one = {
-    name: "Tim",
+    name: function () {
+            const name = document.getElementById(player_one)
+    },
     quote: "It's got big teeth and a mean streak a mile wide...!",
     health: 100,
     weapons: [weapon_1, weapon_2, weapon_4],
@@ -61,6 +63,10 @@ let player_one = {
             setTimeout(() => {
                 turn_warning.innerText = "";
             }, 3000);
+        if(typeof(this.weapons[this.equipped_weapon].damage) == 'string') { // looking at our equipped weapon's damage!
+            enemy.health -= Math.ceil(Math.random() * Number(this.weapons[this.equipped_weapon].damage)) //if weapon.damage is a string(like it is for weapon 4, our randomize weapon, we want to set that string to be the maximum damage possible (for weapon 4 its 30.) INSTEAD of a defined damage like the other weapons.
+        } else {
+            enemy.health -= this.weapons[this.equipped_weapon].damage; //accessing this player's equipped weapon, using the equipped weapon index in tandem with this players weapons array. Then we want that weapon's damage.
         }
     },
     block : function() {
@@ -81,12 +87,14 @@ let player_one = {
 }
 
 let player_two = {
-    name: "Kit",
+    name: function(){
+        const name = document.getElementById(player_two)
+    },
     quote: "I broke off a piece of that Kit Kat!",
     health: 100,
     weapons: [weapon_3],
     equipped_weapon: 0,
-    attack: function(enemy = player_one) { 
+    attack: function(enemy = player_one) {
         //Checks if player_one is blocking or not. If not blocking normal damage from weapon occurs.
         if (player_turn == 2) {
             if (player_one.blocking == false) {
@@ -127,7 +135,7 @@ function set_game_board() {
     for (let i = 0; i < player_one.weapons.length; i++) {
         player1_weapons.innerHTML += `
             <li onclick="equip_weapon(0, ${i})">${player_one.weapons[i].name}</li>
-        `; 
+        `;
     }
     //adding shields to the page
     player1_shields.innerText = player_one.shield[0].name
@@ -143,7 +151,6 @@ function set_game_board() {
             <li onclick="equip_weapon(${player_two}, ${i})">${player_two.weapons[i].name}</li>
         `;
     }
-    
     //Show who's turn it is and pop up warning if it's not their turn
     turn.innerText = player_turn;
     
