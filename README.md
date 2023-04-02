@@ -20,7 +20,7 @@ HOW TO USE/CONTRIBUTE
 6. Wait for pull request to be merged
 
 CONTRIBUTORS
-Extra super special thank you to Aaron Samples, our programming basics instructor at Coding Dojo, for coding 99% of the project at the initial commit. 
+Extra super special thank you to Aaron Samples, our programming basics instructor at Coding Dojo, for coding 99% of the project at the initial commit, as part of an office hours instructional session.
 
 1. AARON SAMPLES
 2. ANTHONY A. GARCIA
