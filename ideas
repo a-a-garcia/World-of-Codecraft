@@ -25,3 +25,8 @@ A.G 03/31/2023
 #12 Make it evident which weapon is currently equipped once a weapon is selected.
 
 #13 Create a turn based system in that once an decision is made by player one or player two, that player cannot act again until the other player has made their turn.
+(Luke Jech working on back-end function) 
+
+#14 PLayers can input their own names
+
+#15 Single player version with player 2 being "AI" computer opponent. 
