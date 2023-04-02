@@ -62,16 +62,12 @@ let player_two = {
     health: 100,
     weapons: [weapon_3],
     equipped_weapon: 0,
-    attack: function(enemy = player_one) { //eventually, we'd want to pass player parameters to this function
-        // if(typeof(this.weapons[this.equipped_weapon].damage) == 'string') { // looking at our equipped weapon's damage!
-        //     enemy.health -= Math.ceil(Math.random() * Number(this.weapons[this.equipped_weapon].damage)) //if weapon.damage is a string(like it is for weapon 4, our randomize weapon, we want to set that string to be the maximum damage possible (for weapon 4 its 30.) INSTEAD of a defined damage like the other weapons.
-        // } else { 
-        //     enemy.health -= this.weapons[this.equipped_weapon].damage; //accessing this player's equipped weapon, using the equipped weapon index in tandem with this players weapons array. Then we want that weapon's damage.
-        // }
+    attack: function(enemy = player_one) { 
+        //Checks if player_one is blocking or not. If not blocking normal damage from weapon occurs.
         if (player_one.blocking == false) {
             enemy.health -= this.weapons[this.equipped_weapon].damage
             player1_health.innerText = player_one.health
-        } else {
+        } else { //if player_one is blocking, we subtract the shield block from the weapon damage
             enemy.health -= (this.weapons[this.equipped_weapon].damage - player_one.shield[0].block)
             console.log(player_one.health)
             player1_health.innerText = player_one.health
