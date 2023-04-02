@@ -8,7 +8,7 @@ spells which use a new resource called mana to heal a player or cast fireballs, 
 
 HOW TO ACCESS THE PROJECT
 
-The app will be interactable via GitHub pages. No installation necessary.
+The app will be interactable via GitHub pages. No installation necessary. https://a-a-garcia.github.io/World-of-Codecraft/
 
 HOW TO USE/CONTRIBUTE
 
