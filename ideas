@@ -32,3 +32,5 @@ A.G 03/31/2023
 (Carlos can Work on this)
 
 #15 Single player version with player 2 being "AI" computer opponent.
+
+#16 A button that displays the text "start over" when the game ends (when the player has 0 health?) and restarts the game.
