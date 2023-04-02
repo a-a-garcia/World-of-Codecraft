@@ -18,6 +18,12 @@ weapon_4 = {
     name: 'Mace of Math.Random',
     damage: '30'
 }
+
+//shields can block incoming damage
+shield_1 = {
+    name : "Captain America's Sheild",
+    block : 30
+}
 //damage: Math.floor(Math.random() * 30) did not work because it was not truly random. It only randomized once when the page started.
 
 
@@ -28,7 +34,9 @@ let player_one = {
     quote: "It's got big teeth and a mean streak a mile wide...!",
     health: 100,
     weapons: [weapon_1, weapon_2, weapon_4],
+    shield : [shield_1],
     equipped_weapon: 0, /*its a number as it represents an index of the eventual weapons array its accessing*/
+    blocking : false,
     attack: function(enemy = player_two) { //eventually, we'd want to pass player parameters to this function
         if(typeof(this.weapons[this.equipped_weapon].damage) == 'string') { // looking at our equipped weapon's damage!
             enemy.health -= Math.ceil(Math.random() * Number(this.weapons[this.equipped_weapon].damage)) //if weapon.damage is a string(like it is for weapon 4, our randomize weapon, we want to set that string to be the maximum damage possible (for weapon 4 its 30.) INSTEAD of a defined damage like the other weapons.
@@ -41,6 +49,10 @@ let player_one = {
             youDied.style.display = 'inline';
         }
         player2_health.innerText = player_two.health;
+    },
+    block : function() {
+        this.blocking = true
+        console.log(player_one.blocking)
     }
 }
 
@@ -50,8 +62,17 @@ let player_two = {
     health: 100,
     weapons: [weapon_3],
     equipped_weapon: 0,
-    attack: function(enemy, weapon) {
-        return enemy.health -= weapon.damage
+    attack: function(enemy = player_one) { 
+        //Checks if player_one is blocking or not. If not blocking normal damage from weapon occurs.
+        if (player_one.blocking == false) {
+            enemy.health -= this.weapons[this.equipped_weapon].damage
+            player1_health.innerText = player_one.health
+        } else { //if player_one is blocking, we subtract the shield block from the weapon damage
+            enemy.health -= (this.weapons[this.equipped_weapon].damage - player_one.shield[0].block)
+            console.log(player_one.health)
+            player1_health.innerText = player_one.health
+        }
+        player1_health.innerText = player_one.health;
     }
 }
 
@@ -73,7 +94,8 @@ function set_game_board() {
             <li onclick="equip_weapon(0, ${i})">${player_one.weapons[i].name}</li>
         `; 
     }
-
+    //adding shields to the page
+    player1_shields.innerText = player_one.shield[0].name
 
     //player two start
     //setting their name
@@ -109,3 +131,4 @@ function equip_weapon(player_index, weapon_index) {
 
 set_game_board();
 
+console.log(player_one.shield[0].block)
