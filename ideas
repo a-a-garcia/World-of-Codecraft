@@ -20,6 +20,8 @@ A.G 03/31/2023
 
 #10 Create health and mana bars that correlate to the % of health that each player has. It should move dynamically when health is decreased or increased.
 
-#11 Create a weapons available array of all possible weapons + display it on the page.
+#11 Create a weapons available array of all possible weapons (not just the ones that a player has in their weapons array) + display it on the page.
 
 #12 Make it evident which weapon is currently equipped once a weapon is selected.
+
+#13 Create a turn based system in that once an decision is made by player one or player two, that player cannot act again until the other player has made their turn.
