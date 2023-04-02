@@ -1,0 +1,25 @@
+A.G 03/31/2023
+
+#1 Instead of clicking the text of the weapon, create a "pick up weapon" button next to each weapon.
+
+#2 Create some sort of graphic that displays next to the cursor when a weapon is successfully picked up.
+
+#3 Create a "battle" interface at the button that displays information about the battle IE - "player one hits player two with X weapon for Y Damage"
+
+#4 Display some sort of animation or gif when attack button is pressed.
+
+#5 Display some sort of animation or gif when player one or player two dies.
+
+#6 Create an attack button for player two.
+
+#7 Create weapon durability function - weapons should have durability, reduces each time you attack with said weapon. Once durability reaches zero, do not allow user to pick that weapon anymore. (grey it out)
+
+#8 Create armor functions allow user to be able to equip armor which reduces the amount of damage they take
+
+#9 Create spells - fireball, heal (restores health) - would need to create mana?
+
+#10 Create health and mana bars that correlate to the % of health that each player has. It should move dynamically when health is decreased or increased.
+
+#11 Create a weapons available array of all possible weapons + display it on the page.
+
+#12 Make it evident which weapon is currently equipped once a weapon is selected.

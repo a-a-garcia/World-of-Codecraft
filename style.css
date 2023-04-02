@@ -1,0 +1,38 @@
+/* * {
+    border: 1px solid red;
+} */
+
+html {
+    background-color: darkblue;
+    color: aliceblue;
+}
+
+#gameBoard {
+    display: flex;
+}
+
+h1 {
+    text-align: center;
+}
+
+.playerBoard {
+    width: 50%;
+    text-align: center;
+}
+
+.weaponList {
+    border: 1px solid red;
+    margin: 20px;
+    background-image: url('./images/sword2.png');
+    background-size: cover;
+}
+
+ul {
+    text-align: center;
+    list-style-position: inside;
+}
+
+#youDied {
+    width: 90%;
+    display: none;
+}

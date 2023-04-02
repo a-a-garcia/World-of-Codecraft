@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="./script.js" defer></script>
+    <title>World of Codecraft</title>
+</head>
+<body>
+    <h1>World of Codecraft</h1>
+    <div id="gameBoard">
+        <div class="playerBoard">
+            <h2>Player One</h2>
+            <p>Name: <span id="player1_name"></span></p>
+            <div>Health: <span id="player1_health"></span></div>
+            <div class="weaponList">
+                <h3>Weapons:</h3>
+                <ul id="player1_weapons"></ul>
+                <p>Weapon in use: <span id="player1_equipped"></span></p>
+            </div>
+            <button onclick="player_one.attack()">Attack!</button>
+        </div>
+        <div class="playerBoard">
+            <h2>Player Two</h2>
+            <img id="youDied" src="./images/youdied.gif"/>
+            <div class="playerAttributes" id="kitBoard">
+                <p>Name: <spam id="player2_name"></spam></p>
+                <div>Health: <span id="player2_health"></span></div>
+                <div class="weaponList">
+                    <h3>Weapons:</h3>
+                    <ul id="player2_weapons"></ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
