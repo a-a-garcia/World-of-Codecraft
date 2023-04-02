@@ -26,6 +26,8 @@ shield_1 = {
 }
 //damage: Math.floor(Math.random() * 30) did not work because it was not truly random. It only randomized once when the page started.
 
+//Player turn variable to check to see who's turn it is
+let player_turn = 1
 
 //PLAYERS
 //this.weapons[this.equipped_weapon].damage refers to the equipped weapon's damage.
@@ -38,21 +40,43 @@ let player_one = {
     equipped_weapon: 0, /*its a number as it represents an index of the eventual weapons array its accessing*/
     blocking : false,
     attack: function(enemy = player_two) { //eventually, we'd want to pass player parameters to this function
-        if(typeof(this.weapons[this.equipped_weapon].damage) == 'string') { // looking at our equipped weapon's damage!
-            enemy.health -= Math.ceil(Math.random() * Number(this.weapons[this.equipped_weapon].damage)) //if weapon.damage is a string(like it is for weapon 4, our randomize weapon, we want to set that string to be the maximum damage possible (for weapon 4 its 30.) INSTEAD of a defined damage like the other weapons.
-        } else { 
-            enemy.health -= this.weapons[this.equipped_weapon].damage; //accessing this player's equipped weapon, using the equipped weapon index in tandem with this players weapons array. Then we want that weapon's damage.
+        if (player_turn == 1) {
+            if(typeof(this.weapons[this.equipped_weapon].damage) == 'string') { // looking at our equipped weapon's damage!
+                enemy.health -= Math.ceil(Math.random() * Number(this.weapons[this.equipped_weapon].damage)) //if weapon.damage is a string(like it is for weapon 4, our randomize weapon, we want to set that string to be the maximum damage possible (for weapon 4 its 30.) INSTEAD of a defined damage like the other weapons.
+            } else { 
+                enemy.health -= this.weapons[this.equipped_weapon].damage; //accessing this player's equipped weapon, using the equipped weapon index in tandem with this players weapons array. Then we want that weapon's damage.
+            }
+            if (enemy.health <= 0) { //once enemy's health reaches 0, we don't want to set it to 0 so it doesn't go negative.
+                enemy.health = 0
+                kitBoard.style.display = 'none';
+                youDied.style.display = 'inline';
+            }
+            player2_health.innerText = player_two.health;
+            player_turn = 2
+            turn.innerText = player_turn;
+        } else {
+            //text to remind player it's not their turn.
+            turn_warning.innerText = "*Sorry it's not your turn right now!*";
+            //text removed after 3 seconds
+            setTimeout(() => {
+                turn_warning.innerText = "";
+            }, 3000);
         }
-        if (enemy.health <= 0) { //once enemy's health reaches 0, we don't want to set it to 0 so it doesn't go negative.
-            enemy.health = 0
-            kitBoard.style.display = 'none';
-            youDied.style.display = 'inline';
-        }
-        player2_health.innerText = player_two.health;
     },
     block : function() {
-        this.blocking = true
-        console.log(player_one.blocking)
+        if (player_turn == 1) {   
+            this.blocking = true
+            console.log(player_one.blocking)
+            player_turn = 2
+            turn.innerText = player_turn;
+        } else {
+            //text to remind player it's not their turn.
+            turn_warning.innerText = "*Sorry it's not your turn right now!*";
+            //text removed after 3 seconds
+            setTimeout(() => {
+                turn_warning.innerText = "";
+            }, 3000);
+        }
     }
 }
 
@@ -64,15 +88,26 @@ let player_two = {
     equipped_weapon: 0,
     attack: function(enemy = player_one) { 
         //Checks if player_one is blocking or not. If not blocking normal damage from weapon occurs.
-        if (player_one.blocking == false) {
-            enemy.health -= this.weapons[this.equipped_weapon].damage
-            player1_health.innerText = player_one.health
-        } else { //if player_one is blocking, we subtract the shield block from the weapon damage
-            enemy.health -= (this.weapons[this.equipped_weapon].damage - player_one.shield[0].block)
-            console.log(player_one.health)
-            player1_health.innerText = player_one.health
+        if (player_turn == 2) {
+            if (player_one.blocking == false) {
+                enemy.health -= this.weapons[this.equipped_weapon].damage
+                player1_health.innerText = player_one.health
+            } else { //if player_one is blocking, we subtract the shield block from the weapon damage
+                enemy.health -= (this.weapons[this.equipped_weapon].damage - player_one.shield[0].block)
+                console.log(player_one.health)
+                player1_health.innerText = player_one.health
+            }
+            player1_health.innerText = player_one.health;
+            player_turn = 1
+            turn.innerText = player_turn;
+        } else {
+            //text to remind player it's not their turn.
+            turn_warning.innerText = "*Sorry it's not your turn right now!*";
+            //text removed after 3 seconds
+            setTimeout(() => {
+                turn_warning.innerText = "";
+            }, 3000);
         }
-        player1_health.innerText = player_one.health;
     }
 }
 
@@ -108,6 +143,9 @@ function set_game_board() {
             <li onclick="equip_weapon(${player_two}, ${i})">${player_two.weapons[i].name}</li>
         `;
     }
+    
+    //Show who's turn it is and pop up warning if it's not their turn
+    turn.innerText = player_turn;
     
 }
 
