@@ -23,10 +23,12 @@ A.G 03/31/2023
 #11 Create a weapons available array of all possible weapons (not just the ones that a player has in their weapons array) + display it on the page.
 
 #12 Make it evident which weapon is currently equipped once a weapon is selected.
+(Carlos Will work on this)
 
 #13 Create a turn based system in that once an decision is made by player one or player two, that player cannot act again until the other player has made their turn.
-(Luke Jech working on back-end function) 
+(Luke Jech working on back-end function)
 
 #14 PLayers can input their own names
+(Carlos can Work on this)
 
-#15 Single player version with player 2 being "AI" computer opponent. 
+#15 Single player version with player 2 being "AI" computer opponent.
