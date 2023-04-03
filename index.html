@@ -13,11 +13,12 @@
     <div id="gameBoard">
         <div class="playerBoard">
             <h2>Player One</h2>
-            <p>Name: <span id="player1_name"></span></p>
-            <!-- <form action="/process" method="post">
+            <!-- <p>Name: <span id="player1_name"></span></p> -->
+            <form action="/process" method="post">
                 <label for="player1_name">Name:</label>
                 <input type="text" value="" placeholder="Enter name ..." id="player1_name">
-            </form> Carlos to fix-->
+            </form>
+            <!-- Carlos to fix -->
             <div>Health: <span id="player1_health"></span></div>
             <div class="weaponList">
                 <h3>Shields:</h3>
@@ -31,13 +32,14 @@
         </div>
         <div class="playerBoard">
             <h2>Player Two</h2>
-            <!-- <form action="/process" method="post">
+            <form action="/process" method="post">
                 <label for="player2_name">Name:</label>
                 <input type="text" value="" placeholder="Enter name ..." id="player2_name">
-            </form> Carlos to fix-->
+            </form>
+            <!-- Carlos to fix -->
             <img id="youDied" src="./images/youdied.gif"/>
             <div class="playerAttributes" id="kitBoard">
-                <p>Name: <span id="player2_name"></span></p>
+                <!-- <p>Name: <span id="player2_name"></span></p> -->
 
                 <div>Health: <span id="player2_health"></span></div>
                 <div class="weaponList">
@@ -47,7 +49,7 @@
                 </div>
             </div>
         </div>
-        
+
     </div>
         <h2>Turn: Player <span id="turn"></span></h2>
         <p><i><span id="turn_warning"></span><i</p>
