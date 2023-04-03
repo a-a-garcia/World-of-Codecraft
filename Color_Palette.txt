@@ -1,0 +1,11 @@
+Modern color palette hex codes (top to bottom):
+
+Almost black: #121e26 - Used for background of the site
+
+Deep forest green: #283635
+
+Light beige: #f4efeb
+
+Beige: #d2c0b2
+
+Clay: #9d6556
