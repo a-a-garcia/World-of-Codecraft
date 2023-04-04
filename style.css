@@ -1,6 +1,6 @@
-/* * {
-    border: 1px solid red;
-} */
+* {
+    font-family: 'MedievalSharp', cursive;
+}
 
 html {
     background-color: #121e26;
@@ -13,6 +13,7 @@ html {
 
 h1 {
     text-align: center;
+    font-size: 80px;
 }
 
 .playerBoard {
@@ -21,7 +22,7 @@ h1 {
 }
 
 .weaponList {
-    border: 1px solid red;
+    border: 1px solid silver;
     margin: 20px;
     background-image: url('./images/sword2.png');
     background-size: cover;
@@ -44,4 +45,40 @@ ul {
 #player2_name{
     background-color: darkblue;
     color: yellow;
+}
+
+/*Player Inventory*/
+
+.equip_buttons {
+    background-color: black;
+    font-size: 18px;
+    color: white;
+    padding: 2% 2%;
+    margin-left: 2%;
+}
+
+.equip_buttons:active {
+    background-color: white;
+    color: red;
+}
+
+.weapons_inventory{
+    margin: 2.5%;
+}
+
+.weapon_in_use {
+    font-size: 24px;
+}
+
+#player1_equipped {
+    font-size: 48px;
+    font-weight: bolder;
+    font-style: italic;
+    color: white;
+}
+
+.health {
+    margin-top: 5%;
+    font-size: 48px;
+    color: red;
 }

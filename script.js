@@ -56,6 +56,7 @@ let player_one = {
                 youDied.style.display = 'inline';
             }
             player2_health.innerText = player_two.health;
+            
             player_turn = 2
             turn.innerText = player_turn;
         } else {
@@ -141,7 +142,7 @@ function set_game_board() {
     //using a for loop to traverse player one's weapons array and display each weapon they have as HTML
     for (let i = 0; i < player_one.weapons.length; i++) {
         player1_weapons.innerHTML += `
-            <li onclick="equip_weapon(0, ${i})">${player_one.weapons[i].name}</li>
+            <li class="weapons_inventory">${player_one.weapons[i].name} <button class="equip_buttons" onclick="equip_weapon(0, ${i})">Equip</button></li>
         `;
     }
     //adding shields to the page

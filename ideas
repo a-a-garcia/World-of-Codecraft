@@ -1,6 +1,6 @@
 A.G 03/31/2023
 
-#1 Instead of clicking the text of the weapon, create a "pick up weapon" button next to each weapon.
+#1 Instead of clicking the text of the weapon, create a "pick up weapon" button next to each weapon. (Anthony - completed on 04.03.2023! Next, I want to eventually remove the "weapon in use" at the bottom and just create a function to change the button to show "equipped" once the user equips a weapon &does not allow them to click it again -since they already equipped it-.)
 
 #2 Create some sort of graphic that displays next to the cursor when a weapon is successfully picked up.
 

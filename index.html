@@ -5,6 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap" rel="stylesheet">
     <script src="./script.js" defer></script>
     <title>World of Codecraft</title>
 </head>
@@ -19,13 +22,13 @@
                 <input type="text" value="" placeholder="Enter name ..." id="player1_name">
             </form>
             <!-- Carlos to fix -->
-            <div>Health: <span id="player1_health"></span></div>
+            <div class="health">Health: <span id="player1_health"></span></div>
             <div class="weaponList">
                 <h3>Shields:</h3>
                 <ul id ="player1_shields"></ul>
                 <h3>Weapons:</h3>
                 <ul id="player1_weapons"></ul>
-                <p>Weapon in use: <span id="player1_equipped"></span></p>
+                <p class="weapon_in_use">Weapon in use: <span id="player1_equipped"></span></p>
             </div>
             <button onclick="player_one.attack()">Attack!</button>
             <button onclick="player_one.block()">Block</button>
@@ -41,7 +44,7 @@
             <div class="playerAttributes" id="kitBoard">
                 <!-- <p>Name: <span id="player2_name"></span></p> -->
 
-                <div>Health: <span id="player2_health"></span></div>
+                <div class="health">Health: <span id="player2_health"></span></div>
                 <div class="weaponList">
                     <h3>Weapons:</h3>
                     <ul id="player2_weapons"></ul>
