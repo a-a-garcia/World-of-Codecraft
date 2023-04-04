@@ -82,3 +82,42 @@ ul {
     font-size: 48px;
     color: red;
 }
+
+.wrap {
+    display: flex;
+    flex-direction: column;
+    Height: 200px;
+    justify-content: space-between;
+    background-color: grey;
+}
+
+.A {
+    display: flex;
+    flex-direction: column;
+    flex: 1, 1, auto;
+}
+
+.B {
+    display: flex;
+    flex-direction: column;
+    flex: 0, 0, auto;
+}
+
+.A1 {
+    background-color: black;
+    flex: 0, 0, auto;
+    font-size: 20px;
+}
+
+.B1 {
+    background-image: url('./images/sword2.png');
+    background-size: cover;
+    flex: 0, 0, auto;
+    overflow: auto;
+    height: 200px;
+}
+
+.turn {
+    background-color: blueviolet;
+    flex: 0, 0, auto;
+}
