@@ -1,5 +1,7 @@
 //WEAPONS
 
+
+
 let weapon_1 = {
     name: `Sword of swoards`,
     damage: 10,
@@ -122,3 +124,21 @@ export let player_two = {
         }
     }
 }
+
+export function get_weapon(weapon, player) {
+    player.weapons.push(weapon);
+}
+
+//#3 - EQUIP A WEAPON - need to go over this again..... players[player_index]??????????
+/*refer to the loops above. When the weapon is clicked on the page, equip_weapon is called which takes in a whole player and a weapon index,
+both of which are given to us, for each weapon in the array, by the for loop. It then changes the equipped weapon in the player object to whatever
+iteration of the loop its on.*/
+export function equip_weapon(player_index, weapon_index) {
+    players[player_index].equipped_weapon = weapon_index;
+    player1_equipped.innerText = player_one.weapons[weapon_index].name
+    // console.log(players[player_index].equipped_weapon) //logs to the console the index of the weapons array
+}
+// equip_weapon takes in a player index, and a weapon index.
+// when weapon is clicked, it access the players array (line 40), access the index of the player, their equipped weapon, and sets it to the weapon index of that iteration of the loop
+
+export let players = [player_one, player_two]
